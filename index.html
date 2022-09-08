@@ -308,5 +308,22 @@
   <p class="subtitle">Founder of ValensCMS. The CMS with own MIND</p>
   </div>
   <div class="scanlines"></div>
+  <script>
+    myAudio = new Audio('bgmusic.mp3'); 
+    if (typeof myAudio.loop == 'boolean')
+    {
+        myAudio.loop = true;
+    }
+    else
+    {
+        myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    }
+    document.body.addEventListener("mousemove", function () {
+      myAudio.play()
+    })
+  </script>
 </body>
 </html>
